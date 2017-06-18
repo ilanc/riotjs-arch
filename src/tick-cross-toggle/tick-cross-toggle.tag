@@ -4,6 +4,7 @@
 	<script type="es6">
 		console.log('tick-cross-toggle.tag')
 
+    import '../node_modules/font-awesome/css/font-awesome.css'
     import {CheckState} from './tick-cross-toggle.js'
 
     var self = this

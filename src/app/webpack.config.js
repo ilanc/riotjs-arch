@@ -20,6 +20,16 @@ module.exports = {
 					'css-loader'
 				]
 			},
+			{
+				test: /\.(eot|svg|ttf|woff|woff2)/,
+				loader: 'file-loader',
+				options: { name: 'fonts/[name].[ext]' }
+			},
+			{
+				test: /\.(png|jpg|jpeg|gif|svg)$/,
+				loader: 'file-loader',
+				options: { name: 'img/[name].[ext]' }
+			},
       {
         test: /\.tag$/,
         exclude: /node_modules/,
