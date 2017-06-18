@@ -1,0 +1,29 @@
+{
+  "name": "ilan-arch",
+  "version": "1.0.0",
+  "description": "Architecture for project with multiple riotjs apps",
+  "main": "index.js",
+  "scripts": {
+    "build-app": "webpack --progress --colors --display-modules --config app/webpack.config.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ilan Copelyn",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
+    "babel-loader": "^6.2.10",
+    "babel-preset-es2015-riot": "^1.1.0",
+    "css-loader": "^0.28.4",
+    "html-webpack-plugin": "^2.28.0",
+    "riot": "^3.4.4",
+    "riot-hot-reload": "^1.0.0",
+    "riot-tag-loader": "^1.0.0",
+    "style-loader": "^0.18.2",
+    "webpack": "^2.4.1",
+    "webpack-dev-server": "^2.4.5"
+  },
+  "dependencies": {
+    "jquery": "^3.2.1"
+  }
+}
