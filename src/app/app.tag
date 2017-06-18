@@ -12,9 +12,9 @@
 				<label class="tr-label" style="font-size: 20px;">App</label>
 			</p>
 			<p class="tr-text-center">
-				<p>Check #1 ok? <tick-cross-toggle id="check1" onchange={tickChange}></tick-cross-toggle></p>
-				<p>Check #2 ok? <tick-cross-toggle id="check2" onchange={tickChange}></tick-cross-toggle></p>
-				<p>Check #3 ok? <tick-cross-toggle id="check3" onchange={tickChange}></tick-cross-toggle></p>
+				<p>Check #1 ok? <tick-cross-toggle id="check1" state={state.check1} onchange={tickChange}></tick-cross-toggle></p>
+				<p>Check #2 ok? <tick-cross-toggle id="check2" state={state.check2} onchange={tickChange}></tick-cross-toggle></p>
+				<p>Check #3 ok? <tick-cross-toggle id="check3" state={state.check3} onchange={tickChange}></tick-cross-toggle></p>
 				<pre>{JSON.stringify(state, null, 4)}</pre>
 			</p>
 		</section>
@@ -24,7 +24,7 @@
 
 	<script type="es6">
 
-		import {State} from '../tick-cross-toggle/state.js'
+		import {State} from './state.js'
     import '../tick-cross-toggle/tick-cross-toggle.tag'
 
     this.state = State
