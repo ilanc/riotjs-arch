@@ -13,7 +13,7 @@
   <logs logs={ logs } onclear={ clearLogs }></logs>
 
   <style>
-    random h1 {
+    h1 {
       color: red;
     }
   </style>
