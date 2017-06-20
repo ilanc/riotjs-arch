@@ -4,6 +4,7 @@ Demo shows:
 1. App dir layout (and referencing shared tags = `../tick-cross-toggle`)
 2. Static html
 3. Assets - e.g. imgs
+4. Check for outdated packages = `npm outdated`
 
 ## App dir layout
 
