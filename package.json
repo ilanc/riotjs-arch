@@ -6,6 +6,7 @@
   "scripts": {
     "build-app": "webpack --progress --colors --display-modules --config src/app/webpack.config.js",
     "build-webpack": "webpack --progress --colors --display-modules --config src/webpack/webpack.config.js",
+    "start-webpack": "webpack-dev-server --progress --colors --config src/webpack/webpack.config.js --watch --inline --hot -d --port 3001", // http://localhost:3001/webpack-dev-server/
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Ilan Copelyn",
