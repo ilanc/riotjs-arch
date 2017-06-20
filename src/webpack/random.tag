@@ -12,12 +12,6 @@
 
   <logs logs={ logs } onclear={ clearLogs }></logs>
 
-  <style>
-    random h1 {
-      color: red;
-    }
-  </style>
-
   <script>
     import './logs.tag'
 
