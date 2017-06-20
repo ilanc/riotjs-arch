@@ -5,6 +5,7 @@ Demo shows:
 2. es6
 3. style injection
 4. webpack-dev-server with hot module reloading
+5. use .tag.html
 
 ## Style injection
 
@@ -40,3 +41,7 @@ riot.tag2('random',
 * npm run start-webpack
 * open http://localhost:3001/webpack-dev-server/
 * make change - e.g. src/webpack/random.tag - change `color` to `blue`
+
+## use .tag.html
+* So that `> Format document` and intellisense works in VS Code.
+* From https://github.com/voorhoede/riotjs-style-guide#use-taghtml-extension
