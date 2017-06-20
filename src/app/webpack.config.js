@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   target: 'web',
   devtool: 'inline-source-map',
-  entry: './app/app.js',
+  entry: './src/app/app.js',
   output: {
     path: path.resolve(__dirname, '../../dist/app'),
     //publicPath: '/app/',
@@ -21,17 +21,18 @@ module.exports = {
 				]
 			},
 			{
-				test: /(fontawesome-webfont)+\.(eot|svg|ttf|woff|woff2)/,
+				test: /\.(eot|svg|ttf|woff|woff2)/,
 				loader: 'file-loader',
 				options: { name: 'fonts/[name].[ext]' }
 			},
 			{
 				test: /\.(png|jpg|jpeg|gif|svg)$/,
+				exclude: /fontawesome-webfont/, // fontawesome-webfont.svg
 				loader: 'file-loader',
-				options: { name: '[path]/[name].[ext]' }
+				options: { name: 'img/[name].[ext]' }
 			},
       {
-        test: /\.tag$/,
+				test: /\.tag(.html)?$/,
         exclude: /node_modules/,
         loader: 'riot-tag-loader',
         options: {
@@ -51,7 +52,7 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			inject: 'body',
 			hash: true,
-			template: './app/index.html',
+			template: './src/app/index.html',
 			filename: '../../dist/app/index.html'
 		})
 	]
