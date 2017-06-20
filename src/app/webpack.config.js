@@ -21,14 +21,14 @@ module.exports = {
 				]
 			},
 			{
-				test: /\.(eot|svg|ttf|woff|woff2)/,
+				test: /(fontawesome-webfont)+\.(eot|svg|ttf|woff|woff2)/,
 				loader: 'file-loader',
 				options: { name: 'fonts/[name].[ext]' }
 			},
 			{
 				test: /\.(png|jpg|jpeg|gif|svg)$/,
 				loader: 'file-loader',
-				options: { name: 'img/[name].[ext]' }
+				options: { name: '[path]/[name].[ext]' }
 			},
       {
         test: /\.tag$/,
