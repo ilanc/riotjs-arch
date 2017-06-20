@@ -2,6 +2,7 @@
 
 Demo shows:
 1. App dir layout (and referencing shared tags = `../tick-cross-toggle`)
+2. Static html
 
 ## App dir layout
 
@@ -62,4 +63,6 @@ NOTE: `exclude: /fontawesome-webfont/` prevent duplicates:
 * dist/app/font/fontawesome-webfont.svg
 * dist/app/img/fontawesome-webfont.svg
 
+## Static html
 
+Use ../all/site.css & assets

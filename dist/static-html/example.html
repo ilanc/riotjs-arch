@@ -1,0 +1,32 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrustID</title>
+
+    <link href="../all/site.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="tr-wrapper">
+        <!--Header-->
+        <header>
+            <div class="tr-tagline">Trusted FICA verification</div>
+            <img src="../all/logo.svg" alt="Trust ID" height="30" class="tr-logo" />
+        </header>
+
+        <!-- Screen -->
+        <section class="tr-content" if={this.screenActive}>
+            <p style="padding-top:60px;text-align: center;">
+                <label class="tr-label" style="font-size: 20px;">Capture complete</label>
+            </p>
+            <p class="tr-text-center">
+                Your FICA details have been captured. The company that referred you to TrustID did not specify a return URL. You may close this window.
+            </p>
+        </section>
+        <div class="tr-push"></div>
+    </div>
+    <footer>&copy; Trust ID 2017. All rights reserved.</footer>
+</body>
+</html>
