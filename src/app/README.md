@@ -11,7 +11,6 @@ Demo shows:
 ```
 node_modules/
 package.json
-.babelrc
 src/
 └── all/                    &&
 ├── app1/
@@ -29,6 +28,8 @@ dist/
 |   └── app.min.js
 └── app2/
 ```
+
+***NOTE: no .babelrc required*** - prevented `<style>` from working
 
 &&
 * see `Static html`
