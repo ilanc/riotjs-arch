@@ -22,6 +22,7 @@ module.exports = {
 			},
 			{
 				test: /\.(eot|svg|ttf|woff|woff2)/,
+				include: /fontawesome-webfont/, // exclude app svgs (e.g. ../all/app/icon-camera.svg from ./app.css)
 				loader: 'file-loader',
 				options: { name: 'fonts/[name].[ext]' }
 			},
