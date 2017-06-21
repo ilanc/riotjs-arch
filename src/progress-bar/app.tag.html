@@ -1,0 +1,50 @@
+<app>
+  <div class="tr-wrapper">
+    <!--Header-->
+    <header>
+      <div class="tr-tagline">Trusted FICA verification</div>
+      <img src="../all/logo.svg" alt="Trust ID" height="30" class="tr-logo" />
+    </header>
+
+    <!-- Screen -->
+		<div class="tr-buttons" style="margin-top:20px;">
+			<button class="tr-button tr-button-info" type="button" onclick={clickUp}>Up</button>
+			<button class="tr-button tr-button-success" type="button" onclick={clickDown}>Down</button>
+		</div>
+    <progress-bar w="10%" h="30px"></progress-bar>
+    <progress-bar w="20%" h="20px"></progress-bar>
+    <progress-bar w="30%" h="10px"></progress-bar>
+
+    <div class="tr-push"></div>
+  </div>
+  <footer>&copy; Trust ID 2017. All rights reserved.</footer>
+
+  <script>
+		console.log('app.tag.html')
+    import './progress-bar.tag.html'
+
+		var self = this
+		var p = [.1, .2, .3];
+
+    this.on('mount', function() {
+			self.progressBars = self.tags['progress-bar'];
+    })
+
+    /* Event Handlers */
+    this.clickUp = (e) => {
+			for (var i = 0; i < p.length; ++i) {
+				p[i] += .1;
+				if (p[i] > 1) p[i] = 1;
+				self.progressBars[i].Update(p[i]*100 + '%')
+			}
+    }
+
+    this.clickDown = (e) => {
+			for (var i = 0; i < p.length; ++i) {
+				p[i] -= .1;
+				if (p[i] < 0) p[i] = 0;
+				self.progressBars[i].Update(p[i]*100 + '%')
+			}
+    }
+  </script>
+</app>
