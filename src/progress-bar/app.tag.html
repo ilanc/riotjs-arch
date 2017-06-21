@@ -1,23 +1,13 @@
 <app>
-  <div class="tr-wrapper">
-    <!--Header-->
-    <header>
-      <div class="tr-tagline">Trusted FICA verification</div>
-      <img src="../all/logo.svg" alt="Trust ID" height="30" class="tr-logo" />
-    </header>
-
-    <!-- Screen -->
-		<div class="tr-buttons" style="margin-top:20px;">
-			<button class="tr-button tr-button-info" type="button" onclick={clickUp}>Up</button>
-			<button class="tr-button tr-button-success" type="button" onclick={clickDown}>Down</button>
+  <div style="margin:20px;">
+		<div>
+			<button type="button" onclick={clickUp}>Up</button>
+			<button type="button" onclick={clickDown}>Down</button>
 		</div>
     <progress-bar w="10%" h="30px"></progress-bar>
     <progress-bar w="20%" h="20px"></progress-bar>
     <progress-bar w="30%" h="10px"></progress-bar>
-
-    <div class="tr-push"></div>
   </div>
-  <footer>&copy; Trust ID 2017. All rights reserved.</footer>
 
   <script>
 		console.log('app.tag.html')

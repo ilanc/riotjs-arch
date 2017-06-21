@@ -23,13 +23,16 @@ module.exports = {
 				loader: 'file-loader',
 				options: { name: 'img/[name].[ext]' }
 			},
-			//{ test: /\.(png|jpg|jpeg|gif|svg)$/, loader: 'url-loader', options: { limit: 100000 } },
 			{
 				test: /\.tag(.html)?$/,
-				exclude: /node_modules/,
-				loader: 'riot-tag-loader',
-				options: { type: 'es6', /*hot: true,*/ debug: true } // transpile the riot tags using babel
-			}
+        exclude: /node_modules/,
+        loader: 'riot-tag-loader',
+        options: {
+          //type: 'es6', // NO!!!
+          hot: true,
+          debug: true
+        }
+      }
     ]
   },
 	plugins: [

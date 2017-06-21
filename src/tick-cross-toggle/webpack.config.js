@@ -1,18 +1,27 @@
-const path = require('path')
-const webpack = require('webpack')
+const webpack = require("webpack");
+const path = require("path");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  target: 'web',
-  devtool: 'inline-source-map',
-  entry: './src/app/app.js',
-  output: {
-    path: path.resolve(__dirname, '../../dist/app'),
-    //publicPath: '/app/',
-    filename: 'app.js'
-  },
-  module: {
-    rules: [
+	target: 'web',
+	devtool: 'inline-source-map',
+
+	resolve: {
+		extensions: [
+			".js"
+		]
+	    },
+	entry: {
+		app: [
+			"./src/tick-cross-toggle/app.js"
+		]
+	},
+	output: {
+		path: path.join(__dirname, '/../../dist/tick-cross-toggle/'),
+		filename: "[name].min.js"
+	},
+	module: {
+		rules: [
       {
 				test: /\.css$/,
 				use: [
@@ -22,17 +31,11 @@ module.exports = {
 			},
 			{
 				test: /\.(eot|svg|ttf|woff|woff2)/,
-				include: /fontawesome-webfont/, // exclude app svgs (e.g. ../all/app/icon-camera.svg from ./app.css)
+				include: /fontawesome-webfont/, // exclude app svgs
 				loader: 'file-loader',
 				options: { name: 'fonts/[name].[ext]' }
 			},
 			{
-				test: /\.(png|jpg|jpeg|gif|svg)$/,
-				exclude: /fontawesome-webfont/, // fontawesome-webfont.svg
-				loader: 'file-loader',
-				options: { name: 'img/[name].[ext]' }
-			},
-      {
 				test: /\.tag(.html)?$/,
         exclude: /node_modules/,
         loader: 'riot-tag-loader',
@@ -47,14 +50,14 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel-loader'
       }
-    ]
-  },
+		]
+	},
 	plugins: [
 		new HtmlWebpackPlugin({
 			inject: 'body',
 			hash: true,
-			template: './src/app/index.html',
-			filename: '../../dist/app/index.html'
+			template: './src/tick-cross-toggle/index.html',
+			filename: 'index.html'
 		})
 	]
-}
+};

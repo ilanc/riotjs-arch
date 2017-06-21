@@ -13,11 +13,11 @@ module.exports = {
 	    },
 	entry: {
 		app: [
-			"./src/progress-bar/app.js"
+			"./src/test/app.js"
 		]
 	},
 	output: {
-		path: path.join(__dirname, '/../../dist/progress-bar/'),
+		path: path.join(__dirname, '/../../dist/test/'),
 		filename: "[name].min.js"
 	},
 	module: {
@@ -43,7 +43,7 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			inject: 'body',
 			hash: true,
-			template: './src/progress-bar/index.html',
+			template: './src/test/index.html',
 			filename: 'index.html'
 		})
 	]

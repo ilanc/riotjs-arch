@@ -11,13 +11,14 @@ Demo shows:
 ```
 node_modules/
 package.json
+.babelrc                    %%
 src/
 └── all/                    &&
 ├── app1/
 |   ├── index.html          $$
 |   ├── app.js
 |   ├── app.tag.html
-|   ├── webpack.config.js   **
+|   ├── webpack.config.js   **, %%
 |   ├── ...
 |   └── README.md
 └── app2/
@@ -29,7 +30,9 @@ dist/
 └── app2/
 ```
 
-***NOTE: no .babelrc required*** - prevented `<style>` from working
+%%
+* set compiler options in .babelrc, not in webpack.config.js : riot-tag-loader : options.type = es6
+* = `<style>` not being injected into head problem
 
 &&
 * see `Static html`

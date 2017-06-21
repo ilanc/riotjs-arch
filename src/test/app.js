@@ -6,8 +6,7 @@ console.log('app.js');
 // deps
 import riot from 'riot'
 import $ from 'jquery'
-import './app.css'
-import './app.tag'
+import './app.tag.html'
 
 riot.mount('app')
 $('body').show();

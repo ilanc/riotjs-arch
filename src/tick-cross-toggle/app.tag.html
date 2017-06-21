@@ -1,0 +1,26 @@
+<app>
+	<p>Check #1 ok? <tick-cross-toggle id="check1" state={state.check1} onchange={tickChange}></tick-cross-toggle></p>
+	<p>Check #2 ok? <tick-cross-toggle id="check2" state={state.check2} onchange={tickChange}></tick-cross-toggle></p>
+	<p>Check #3 ok? <tick-cross-toggle id="check3" state={state.check3} onchange={tickChange}></tick-cross-toggle></p>
+	<pre>{JSON.stringify(state, null, 4)}</pre>
+
+	<script>
+
+		import { CheckState } from '../tick-cross-toggle/tick-cross-toggle.js'
+    import '../tick-cross-toggle/tick-cross-toggle.tag.html'
+
+    this.state = {
+			// Checks
+			check1: CheckState.Checked,
+			check2: CheckState.NotSet,
+			check3: CheckState.Unchecked,
+		}
+
+		this.tickChange = (e) => {
+      //console.log('tickChange', e)
+      this.state[e.id] = e.state
+			this.update()
+    }
+
+	</script>
+</app>
