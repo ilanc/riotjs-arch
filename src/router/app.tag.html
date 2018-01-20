@@ -1,0 +1,53 @@
+<app>
+	<div style="margin:20px;">
+		<nav>
+			<a each={ tabs } href="#{ id }">{ title }</a>
+		</nav>
+
+		<tab-a show={ current=='a' }></tab-a>
+		<tab-b show={ current=='b' }></tab-b>
+		<tab-c show={ current=='c' }></tab-c>
+	</div>
+
+	<style>
+		nav {
+      display: block;
+      border-bottom: 1px solid #666;
+      padding: 0 0 1em;
+    }
+    nav > a {
+      display: inline-block;
+      padding: 0 .8em;
+    }
+    nav > a:not(:first-child) {
+      border-left: 1px solid #eee;
+    }
+	</style>
+
+	<script>
+		console.log('app.tag.html')
+		import riotroute from 'riot-route'
+		import './tab-a.tag.html'
+		import './tab-b.tag.html'
+		import './tab-c.tag.html'
+
+		var self = this
+		self.tabs = [
+			{ id: "a", title: "Tab A" },
+			{ id: "b", title: "Tab B" },
+			{ id: "c", title: "Tab C" }
+		]
+		self.current = 'a'
+
+		riotroute(function (id) {
+			if (!id) {
+				return;
+			}
+			self.current = id
+			self.update()
+		})
+		riotroute.start()
+		riotroute.exec()
+
+	</script>
+</app>
