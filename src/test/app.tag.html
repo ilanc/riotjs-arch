@@ -1,9 +1,41 @@
 <app>
-	<testbox></testbox>
+  <testbox></testbox>
+  <br>
+  <testbox text="some text"></testbox>
+  <br>
+  <testbox text={box3}></testbox>
+  <br>
 
   <script>
-		console.log('app.tag')
+    console.log('app.tag')
 
-		import './testbox.tag.html'
+    import './testbox.tag.html'
+
+    let tag = this;
+    tag.box3 = 'from parent';
+    tag.box4 = 'dynamic';
+    tag.showbox4 = true;
+
+    console.log(tag.root);
+
+    function addBoxStatic() {
+      var newTag = document.createElement('testbox');
+      //newTag.setAttribute("text", box4);
+      tag.root.appendChild(newTag);
+      riot.mount(newTag, 'testbox', { text: tag.box4 });
+    }
+
+    function addBox() {
+      var html = `<testbox show={showbox4}></testbox>`;
+      tag.root.innerHTML += html;
+      let newTag = tag.root.children[tag.root.children.length - 1];
+      tag.root.appendChild(newTag);
+      //riot.mount(tag.root, 'app');
+      riot.mount(newTag, 'testbox', { text: tag.box4 });
+    }
+
+    this.on('mount', () => {
+      addBox();
+    });
   </script>
 </app>

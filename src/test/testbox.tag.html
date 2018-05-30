@@ -1,5 +1,5 @@
 <testbox>
-	<div></div>
+	<div>{text}</div>
 
   <style>
 		div {
@@ -11,5 +11,6 @@
 
 	<script>
 		console.log('testbox.tag.html')
+		this.text = opts.text ? opts.text : '';
   </script>
 </testbox>
